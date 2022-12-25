@@ -17,7 +17,8 @@ app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+  // res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+  res.status(404).render("404", { docTitle: "404 Error" });
 });
 app.listen(3000, () => {
   console.log("Server runnung on port 3000");
